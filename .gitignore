@@ -1,0 +1,18 @@
+# Java build output
+javaparser/target/
+
+# Rust build output
+rustparser/target/
+
+# Maven shade-plugin leftover
+javaparser/dependency-reduced-pom.xml
+
+javaparser/styria_reduced.osm
+
+rustparser/styria_reduced.osm
+
+rustparser/benches
+
+rustparser/README.md
+
+javaparser/README.md

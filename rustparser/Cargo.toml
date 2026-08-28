@@ -1,0 +1,35 @@
+[package]
+name = "osm-parser-rust"
+version = "1.0.0"
+edition = "2021"
+
+[lib]
+name = "osm_parser_rust"
+path = "src/lib.rs"
+
+[[bin]]
+name = "osm-parser-rust"
+path = "src/main.rs"
+
+[[bench]]
+name = "parse_benchmark"
+harness = false
+
+[dependencies]
+quick-xml = "0.36"
+
+[dev-dependencies]
+criterion = "0.5"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+
+# Criterion benches build in a profile derived from release by default,
+# but explicitly enabling debug info here makes `cargo flamegraph`/perf
+# style profiling on top of the bench binary nicer if you ever want it.
+[profile.bench]
+opt-level = 3
+lto = true
+codegen-units = 1
